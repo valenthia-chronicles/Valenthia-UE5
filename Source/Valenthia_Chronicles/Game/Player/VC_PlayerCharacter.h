@@ -6,6 +6,8 @@
 #include "Valenthia_Chronicles/Game/Unit/VC_UnitCharacter.h"
 #include "VC_PlayerCharacter.generated.h"
 
+class UCameraComponent;
+class USpringArmComponent;
 
 UCLASS(Abstract, Blueprintable)
 class VALENTHIA_CHRONICLES_API AVC_PlayerCharacter : public AVC_UnitCharacter

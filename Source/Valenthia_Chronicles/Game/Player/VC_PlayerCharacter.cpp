@@ -1,9 +1,9 @@
 // MIT License - Copyright (c) 2024 Valenthia Chronicles
 
+#include "VC_PlayerCharacter.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
-#include "VC_PlayerCharacter.h"
 
 
 // Sets default values
