@@ -1,0 +1,16 @@
+Cpp:
+- changed-files:
+  - any-glob-to-any-file: 'Source/**/*.cpp'
+  - any-glob-to-any-file: 'Source/**/*.h'
+
+Blueprint:
+- changed-files:
+  any-glob-to-any-file: 'Content/Blueprints/**/*.uasset'
+
+Interface:
+- changed-files:
+  any-glob-to-any-file: 'Content/Interface/**/*.uasset'
+
+Workflow:
+- changed-files:
+  any-glob-to-any-file: '.github/workflows/*'

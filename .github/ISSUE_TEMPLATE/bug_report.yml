@@ -1,0 +1,45 @@
+name: Bug report
+description: Create a bug report
+body:
+  - type: textarea
+    id: issue
+    attributes:
+      label: Explain your issue
+      description: |
+        Description of the problem or issue here. Be as precise as possible.
+        If this is a crash, post the crashlog (upload to https://gist.github.com/) and include the link here.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce the problem
+      description: |
+        How can we reproduce this issue? Tell us step by step how it works so that we can identify it.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS version
+      description: |
+        Inform us your OS version (Windows 11 x64, Debian 10 x64, macOS 12, Ubuntu 20.04..).
+      placeholder: |
+        - OS version :
+    validations:
+      required: true
+  - type: input
+    id: software
+    attributes:
+      label: OS version
+      description: |
+        Inform us your Unreal Engine version (Only Unreal Engine 5.4 is currently supported).
+      placeholder: |
+        - Unreal Engine version :
+    validations:
+      required: true
+
