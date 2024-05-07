@@ -7,7 +7,7 @@
 #include "VC_UnitCharacter.generated.h"
 
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class VALENTHIA_CHRONICLES_API AVC_UnitCharacter : public ACharacter
 {
 	GENERATED_BODY()

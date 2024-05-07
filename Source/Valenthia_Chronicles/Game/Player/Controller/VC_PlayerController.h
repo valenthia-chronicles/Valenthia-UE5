@@ -7,7 +7,7 @@
 #include "VC_PlayerController.generated.h"
 
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class VALENTHIA_CHRONICLES_API AVC_PlayerController : public APlayerController
 {
 	GENERATED_BODY()
