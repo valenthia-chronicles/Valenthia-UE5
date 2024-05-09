@@ -7,7 +7,7 @@
 #include "VC_PlayerState.generated.h"
 
 
-UCLASS()
+UCLASS(Abstract, Blueprintable)
 class VALENTHIA_CHRONICLES_API UVC_PlayerState : public UObject
 {
 	GENERATED_BODY()
