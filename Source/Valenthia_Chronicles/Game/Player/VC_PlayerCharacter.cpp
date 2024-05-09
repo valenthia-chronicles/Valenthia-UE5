@@ -12,6 +12,8 @@ AVC_PlayerCharacter::AVC_PlayerCharacter()
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	UnitClass = EUnitClass::PLAYER;
+	
 	SetupPlayerCamera();
 	
 	/// Don't rotate the player to camera direction

@@ -6,6 +6,13 @@
 #include "GameFramework/Character.h"
 #include "VC_UnitCharacter.generated.h"
 
+UENUM(BlueprintType)
+enum class EUnitClass : uint8
+{
+	UNIT	 = 0,
+	PLAYER	 = 1,
+	CREATURE = 2,
+};
 
 UCLASS(Abstract, Blueprintable)
 class VALENTHIA_CHRONICLES_API AVC_UnitCharacter : public ACharacter
@@ -18,6 +25,13 @@ public:
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION(BlueprintCallable)
+	bool IsPlayer(AVC_UnitCharacter* Actor) const;
+
+	// Unit Data variables
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UnitData")
+	EUnitClass UnitClass;
 	
 protected:
 	// Called when the game starts or when spawned
