@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "VC_UnitCharacter.generated.h"
 
+class UVC_StatComponent;
+
 UENUM(BlueprintType)
 enum class EUnitClass : uint8
 {
@@ -36,5 +38,7 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "UnitData")
+	TObjectPtr<UVC_StatComponent> UnitStats;
 };
