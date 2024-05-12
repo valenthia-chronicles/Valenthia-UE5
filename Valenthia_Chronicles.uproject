@@ -81,6 +81,10 @@
 		{
 			"Name": "LocationServicesBPLibrary",
 			"Enabled": false
+		},
+		{
+			"Name": "Reflex",
+			"Enabled": true
 		}
 	],
 	"TargetPlatforms": [
