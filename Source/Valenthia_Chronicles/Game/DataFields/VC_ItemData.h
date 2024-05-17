@@ -24,10 +24,10 @@ struct FVC_ItemData: public FTableRowBase
 	int32 MaxStackSize;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TObjectPtr<UTexture2D> IconImage;
+	TSoftObjectPtr<UTexture2D> IconImage;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TSoftObjectPtr<UMeshComponent> Mesh;
+	TSoftObjectPtr<UStaticMesh> Mesh;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FText Description;
