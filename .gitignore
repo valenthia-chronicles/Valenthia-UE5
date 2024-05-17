@@ -45,6 +45,10 @@
 *.VC.db
 *.VC.opendb
 
+# Developpement folder
+Content/Collections/*
+Content/Developers/*
+
 # Precompiled Assets
 SourceArt/**/*.png
 SourceArt/**/*.tga
