@@ -8,17 +8,16 @@
 #include "InputActionValue.h"
 
 
-AVC_PlayerController::AVC_PlayerController()
-{
-	bShowMouseCursor = true;
-	DefaultMouseCursor = EMouseCursor::Default;
-	bEnableClickEvents = true;
-}
+AVC_PlayerController::AVC_PlayerController() { }
 
 void AVC_PlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
+	bShowMouseCursor = true;
+	DefaultMouseCursor = EMouseCursor::Default;
+	bEnableClickEvents = true;
+	
 	// Recover Input Mapping Context
 	if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer()))
 	{
