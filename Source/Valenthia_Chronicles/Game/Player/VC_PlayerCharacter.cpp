@@ -40,6 +40,15 @@ void AVC_PlayerCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
+bool AVC_PlayerCharacter::IsJumping() const
+{
+	if (GetCharacterMovement())
+	{
+		return GetCharacterMovement()->IsFalling();
+	}
+	return false;
+}
+
 
 void AVC_PlayerCharacter::SetupPlayerCamera()
 {
