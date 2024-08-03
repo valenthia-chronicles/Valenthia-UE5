@@ -18,23 +18,31 @@ class VALENTHIA_CHRONICLES_API AVC_PlayerController : public APlayerController
 	
 public:
 	AVC_PlayerController();
-
+	
 	// Default Input Mapping Context
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	TObjectPtr<UInputMappingContext> DefaultMappingContext;
 
-	// Jump Input Action
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	// List of every input action
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	TObjectPtr<UInputAction> JumpAction;
-
-	// Move Input Action
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	TObjectPtr<UInputAction> MoveAction;
-	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
+	TObjectPtr<UInputAction> LeftClickAction;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
+	TObjectPtr<UInputAction> RightClickAction;
+
+	// List of every handling events
+	UFUNCTION(BlueprintCallable)
+	void HandleLeftClickEvent();
+	UFUNCTION(BlueprintCallable)
+	void HandleRightClickEvent();
 protected:
 	virtual void BeginPlay() override;
 	
 	virtual void SetupInputComponent() override;
+
 	
 private:
 	// Input Events

@@ -6,6 +6,8 @@
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
+#include "Engine/StaticMeshActor.h"
+#include "Valenthia_Chronicles/Game/Player/VC_PlayerCharacter.h"
 
 
 AVC_PlayerController::AVC_PlayerController() { }
@@ -38,9 +40,37 @@ void AVC_PlayerController::SetupInputComponent()
 
 		// Moving
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AVC_PlayerController::Move);
+
+		// Mouse event
+		EnhancedInputComponent->BindAction(LeftClickAction, ETriggerEvent::Started, this, &AVC_PlayerController::HandleLeftClickEvent);
+		EnhancedInputComponent->BindAction(RightClickAction, ETriggerEvent::Started, this, &AVC_PlayerController::HandleRightClickEvent);
 	} 
 }
 
+void AVC_PlayerController::HandleLeftClickEvent()
+{
+	FHitResult HitResult;
+	GetHitResultUnderCursor(ECC_Visibility, false, HitResult);
+	
+	if (HitResult.bBlockingHit)
+	{
+		AActor* HitActor = HitResult.GetActor();
+		if (AVC_UnitCharacter* UnitCharacter = Cast<AVC_UnitCharacter>(HitActor))
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("It's a unit character"));
+		}
+		else if (AStaticMeshActor* StaticMeshActor = Cast<AStaticMeshActor>(HitActor))
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("It's a static mesh"));
+		}
+	}
+}
+
+void AVC_PlayerController::HandleRightClickEvent()
+{
+	FHitResult HitResult;
+	GetHitResultUnderCursor(ECC_Visibility, false, HitResult);
+}
 
 void AVC_PlayerController::Move(const FInputActionValue& Value)
 {
