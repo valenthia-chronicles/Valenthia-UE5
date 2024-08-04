@@ -50,18 +50,19 @@ void AVC_PlayerController::SetupInputComponent()
 void AVC_PlayerController::HandleLeftClickEvent()
 {
 	FHitResult HitResult;
-	GetHitResultUnderCursor(ECC_Visibility, false, HitResult);
+	GetHitResultUnderCursor(ECC_Camera, false, HitResult);
 	
+	// TODO: add a check to be sure that the actor is not hidden in the world
 	if (HitResult.bBlockingHit)
 	{
 		AActor* HitActor = HitResult.GetActor();
 		if (AVC_UnitCharacter* UnitCharacter = Cast<AVC_UnitCharacter>(HitActor))
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("It's a unit character"));
+			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("It's a unit character"));
 		}
 		else if (AStaticMeshActor* StaticMeshActor = Cast<AStaticMeshActor>(HitActor))
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("It's a static mesh"));
+			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("It's a static mesh"));
 		}
 	}
 }
@@ -69,7 +70,7 @@ void AVC_PlayerController::HandleLeftClickEvent()
 void AVC_PlayerController::HandleRightClickEvent()
 {
 	FHitResult HitResult;
-	GetHitResultUnderCursor(ECC_Visibility, false, HitResult);
+	GetHitResultUnderCursor(ECC_Camera, false, HitResult);
 }
 
 void AVC_PlayerController::Move(const FInputActionValue& Value)
