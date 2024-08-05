@@ -55,6 +55,7 @@ void AVC_PlayerController::HandleLeftClickEvent()
 	// TODO: add a check to be sure that the actor is not hidden in the world
 	if (HitResult.bBlockingHit)
 	{
+		/*
 		AActor* HitActor = HitResult.GetActor();
 		if (AVC_UnitCharacter* UnitCharacter = Cast<AVC_UnitCharacter>(HitActor))
 		{
@@ -63,7 +64,7 @@ void AVC_PlayerController::HandleLeftClickEvent()
 		else if (AStaticMeshActor* StaticMeshActor = Cast<AStaticMeshActor>(HitActor))
 		{
 			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("It's a static mesh"));
-		}
+		}*/
 	}
 }
 
